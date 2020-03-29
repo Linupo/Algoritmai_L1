@@ -1,0 +1,12 @@
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\IMG_2345.JPG
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\Bucket_D.deps.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\Bucket_D.runtimeconfig.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\Bucket_D.runtimeconfig.dev.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\Bucket_D.dll
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\bin\Debug\netcoreapp2.0\Bucket_D.pdb
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.csprojAssemblyReference.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.csproj.CoreCompileInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.AssemblyInfoInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.AssemblyInfo.cs
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.dll
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_D_Array\obj\Debug\netcoreapp2.0\Bucket_D.pdb
