@@ -23,14 +23,6 @@ namespace Bucket_D
             myData.WriteToFile("16bit_IMG_2345.bmp", "sorted");
             Helpers.DeleteBuckets();
 
-            //FileStreamArray a = new FileStreamArray("testelis.bin");
-            //a.writeIntAtEnd(10);
-            //a.writeIntAtEnd(4);
-            //a.WriteInt(0, 11);
-            //a.writeIntAtEnd(12);
-            //a.writeIntAtEnd(50);
-            //Console.WriteLine(a.ReadInt(1));
-
             Console.WriteLine("The application has ended succesfully.");
             Console.Read();
         }

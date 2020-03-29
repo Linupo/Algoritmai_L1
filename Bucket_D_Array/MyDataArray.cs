@@ -61,7 +61,7 @@ namespace Bucket_D
             Console.WriteLine("Started sorting");
             int minValue = original.ReadInt(0);
             int maxValue = original.ReadInt(0);
-
+            Console.WriteLine("Finding max and min values");
             for (int i = 1; i < height * width; i++)
             {
                 if (original.ReadInt(i) > maxValue)
@@ -70,32 +70,37 @@ namespace Bucket_D
                     minValue = original.ReadInt(i);
             }
 
-            FileStreamArray[] buckets = new FileStreamArray[maxValue - minValue + 1];
+            //FileStreamArray[] buckets = new FileStreamArray[maxValue - minValue + 1];
 
-            Console.WriteLine("initializing empty buckets");
-            for (int i = 0; i < buckets.Length; i++)
-            {
-                FileStreamArray bucket = new FileStreamArray("Buckets/bucket" + i + ".bin");
-                buckets[i] = bucket;
-            }
+            //Console.WriteLine("initializing empty buckets");
+            //for (int i = 0; i < buckets.Length; i++)
+            //{
+            //    FileStreamArray bucket = new FileStreamArray("Buckets/bucket" + i + ".bin");
+            //    buckets[i] = bucket;
+            //}
+
             Console.WriteLine("Filling buckets");
             for (int i = 0; i < width * height; i++)
             {
                 int origValue = original.ReadInt(i);
-                buckets[origValue - minValue].writeIntAtEnd(origValue);
+                FileStreamArray bucket = new FileStreamArray("Buckets/bucket" + (origValue - minValue) + ".bin");
+                bucket.writeIntAtEnd(origValue);
+                bucket.Close();
             }
             Console.WriteLine("Finishing the sort");
             int k = 0;
-            for (int i = 0; i < buckets.Length; i++)
+            for (int i = 0; i < maxValue - minValue + 1; i++)
             {
-                if (buckets[i].Count > 0)
+                FileStreamArray bucket = new FileStreamArray("Buckets/bucket" + i + ".bin");
+                if (bucket.GetCount() > 0)
                 {
-                    for (int j = 0; j < buckets[i].Count; j++)
+                    for (int j = 0; j < bucket.GetCount(); j++)
                     {
-                        original.WriteInt(k, buckets[i].ReadInt(j));
+                        original.WriteInt(k, bucket.ReadInt(j));
                         k++;
                     }
                 }
+                bucket.Close();
             }
             Console.WriteLine("Sort finished");
         }
