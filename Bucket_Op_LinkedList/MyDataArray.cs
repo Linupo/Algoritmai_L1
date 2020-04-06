@@ -57,54 +57,61 @@ namespace Bucket_Op
 
         public void BucketSort()
         {
+            Helpers.operationsCounter = 0;
             Console.WriteLine("Started sorting");
-            int minValue = bs.Head.Value;
-            int maxValue = bs.Head.Value;
-            LinkedList<int>.Node<int> current = bs.Head;
+            int minValue = bs.Head.Value; Helpers.operationsCounter++;
+            int maxValue = bs.Head.Value; Helpers.operationsCounter++;
+            LinkedList<int>.Node<int> current = bs.Head; Helpers.operationsCounter++;
             Console.WriteLine("Finding max, min values");
             while(current != null)
             {
+                Helpers.operationsCounter++;
                 if (current.Value > maxValue)
-                    maxValue = current.Value;
+                {
+                    maxValue = current.Value; Helpers.operationsCounter++;
+                }
                 if (current.Value < minValue)
-                    minValue = current.Value;
-                current = current.NextNode;
+                {
+                    minValue = current.Value; Helpers.operationsCounter++;
+                }
+                current = current.NextNode; Helpers.operationsCounter++;
             }
             Console.WriteLine("Max, min values found");
 
-            List<LinkedList<int>> buckets = new List<LinkedList<int>>();
+            List<LinkedList<int>> buckets = new List<LinkedList<int>>(); Helpers.operationsCounter++;
             Console.WriteLine("Initiating buckets");
             for (int i = 0; i< maxValue - minValue + 1; i++)
             {
-                buckets.Add(new LinkedList<int>());
+                buckets.Add(new LinkedList<int>()); Helpers.operationsCounter++;
             }
             Console.WriteLine("Buckets initiated");
 
             Console.WriteLine("inserting values");
-            current = bs.Head;
-            while(current != null)
+            current = bs.Head; Helpers.operationsCounter++;
+            while (current != null)
             {
-                buckets[current.Value - minValue].Insert(current.Value);
-                current = current.NextNode;
+                buckets[current.Value - minValue].Insert(current.Value); Helpers.operationsCounter++;
+                current = current.NextNode; Helpers.operationsCounter++;
             }
             Console.WriteLine("Values inserted");
 
             Console.WriteLine("Finishing the sort");
-            bs.DeleteLinkedList();
+            bs.DeleteLinkedList(); Helpers.operationsCounter++;
             int k = 0;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
-                if(buckets[i].Count > 0)
+                Helpers.operationsCounter++;
+                if (buckets[i].Count > 0)
                 {
-                    current = buckets[i].Head;
+                    current = buckets[i].Head; Helpers.operationsCounter++;
                     while (current != null)
                     {
-                        bs.Insert(current.Value);
-                        current = current.NextNode;
+                        bs.Insert(current.Value); Helpers.operationsCounter++;
+                        current = current.NextNode; Helpers.operationsCounter++;
                     }
                 }
             }
-            Console.WriteLine("Sorting ended");
+            Console.WriteLine("Sorting ended, total oparations done:" + Helpers.operationsCounter);
         }
 
         /// <summary>

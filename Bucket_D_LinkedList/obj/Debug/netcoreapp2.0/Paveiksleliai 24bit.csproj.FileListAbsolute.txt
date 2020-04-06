@@ -1,0 +1,24 @@
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\IMG_2345.JPG
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.deps.json
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.runtimeconfig.json
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.runtimeconfig.dev.json
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.dll
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.pdb
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.csprojAssemblyReference.cache
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.csproj.CoreCompileInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.AssemblyInfoInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.AssemblyInfo.cs
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.dll
+C:\Users\linpoc3\Desktop\Algoritmai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.pdb
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\IMG_2345.JPG
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.deps.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.runtimeconfig.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.runtimeconfig.dev.json
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.dll
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\bin\Debug\netcoreapp2.0\Paveiksleliai 24bit.pdb
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.csprojAssemblyReference.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.csproj.CoreCompileInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.AssemblyInfoInputs.cache
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.AssemblyInfo.cs
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.dll
+C:\Users\linpoc3\Desktop\Algoritmai\L1\Bucket_Op\obj\Debug\netcoreapp2.0\Paveiksleliai 24bit.pdb

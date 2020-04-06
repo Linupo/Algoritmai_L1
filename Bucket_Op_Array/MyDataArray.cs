@@ -56,41 +56,50 @@ namespace Bucket_Op
 
         public void BucketSort()
         {
-            int minValue = bs[0];
-            int maxValue = bs[0];
+            Console.WriteLine("Started sorting");
+            int minValue = bs[0]; Helpers.operationCounter++;
+            int maxValue = bs[0]; Helpers.operationCounter++;
 
             for (int i = 1; i < bs.Length; i++)
             {
-                if (bs[i] > maxValue)
-                    maxValue = bs[i];
+                Helpers.operationCounter++;
+                if (bs[i] > maxValue) 
+                {
+                    maxValue = bs[i]; Helpers.operationCounter++;
+                }
+                Helpers.operationCounter++;
                 if (bs[i] < minValue)
-                    minValue = bs[i];
+                {
+                    minValue = bs[i]; Helpers.operationCounter++;
+                }
             }
 
-            List<int>[] bucket = new List<int>[maxValue - minValue + 1];
+            List<int>[] bucket = new List<int>[maxValue - minValue + 1]; Helpers.operationCounter++;
 
             for (int i = 0; i < bucket.Length; i++)
             {
-                bucket[i] = new List<int>();
+                bucket[i] = new List<int>(); Helpers.operationCounter++;
             }
 
             for (int i = 0; i < bs.Length; i++)
             {
-                bucket[bs[i] - minValue].Add(bs[i]);
+                bucket[bs[i] - minValue].Add(bs[i]); Helpers.operationCounter++;
             }
 
-            int k = 0;
+            int k = 0; Helpers.operationCounter++;
             for (int i = 0; i < bucket.Length; i++)
             {
+                Helpers.operationCounter++;
                 if (bucket[i].Count > 0)
                 {
                     for (int j = 0; j < bucket[i].Count; j++)
                     {
-                        bs[k] = bucket[i][j];
-                        k++;
+                        bs[k] = bucket[i][j]; Helpers.operationCounter++;
+                        k++; Helpers.operationCounter++;
                     }
                 }
             }
+            Console.WriteLine("Done sorting, total operations done: " + Helpers.operationCounter);
         }
 
         /// <summary>

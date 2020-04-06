@@ -16,20 +16,16 @@ namespace Bucket_D
 
             Helpers.GenerateRandomImage(1000, 1000);
             Helpers.ConvertTo16bit("IMG_2345.bmp");
-            //ConvertTo16bit("randomImage.bmp");
 
-            MyDataArray myData = new MyDataArray("16bit_IMG_2345.bmp");
-            myData.BucketSort();
-            myData.WriteToFile("16bit_IMG_2345.bmp", "sorted");
+            //MyDataArray myData = new MyDataArray("16bit_IMG_2345.bmp");
+            //myData.BucketSort();
+            //myData.WriteToFile("16bit_IMG_2345.bmp", "sorted");
+
+            MyDataArray rndData = new MyDataArray("randomImage.bmp");
+            rndData.BucketSort();
+            rndData.WriteToFile("randomImage.bmp", "sorted");
+
             Helpers.DeleteBuckets();
-
-            //FileStreamArray a = new FileStreamArray("testelis.bin");
-            //a.writeIntAtEnd(10);
-            //a.writeIntAtEnd(4);
-            //a.WriteInt(0, 11);
-            //a.writeIntAtEnd(12);
-            //a.writeIntAtEnd(50);
-            //Console.WriteLine(a.ReadInt(1));
 
             Console.WriteLine("The application has ended succesfully.");
             Console.Read();

@@ -16,11 +16,14 @@ namespace Bucket_Op
 
             Helpers.GenerateRandomImage(1000, 1000);
             Helpers.ConvertTo16bit("IMG_2345.bmp");
-            //ConvertTo16bit("randomImage.bmp");
+            Helpers.operationCounter = 0;
+            //MyDataArray myData = new MyDataArray("16bit_IMG_2345.bmp");
+            //myData.BucketSort();
+            //myData.WriteToFile("16bit_IMG_2345.bmp", "sorted");
 
-            MyDataArray myData = new MyDataArray("16bit_IMG_2345.bmp");
-            myData.BucketSort();
-            myData.WriteToFile("16bit_IMG_2345.bmp", "sorted");
+            MyDataArray randomData = new MyDataArray("randomImage.bmp");
+            randomData.BucketSort();
+            randomData.WriteToFile("randomImage.bmp", "sorted");
 
             Console.WriteLine("The application has ended succesfully.");
             Console.Read();

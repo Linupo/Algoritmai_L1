@@ -9,6 +9,8 @@ namespace Bucket_Op
 {
     static class Helpers
     {
+        public static int operationsCounter;
+
         static Random rnd = new Random();
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace Bucket_Op
         /// <param name="width">image width</param>
         static public void GenerateRandomImage(int height, int width)
         {
-            Bitmap randomBitmap = new Bitmap(height, width);
+            Bitmap randomBitmap = new Bitmap(height, width, PixelFormat.Format16bppRgb555);
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)

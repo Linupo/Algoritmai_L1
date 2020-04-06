@@ -14,23 +14,23 @@ namespace Bucket_D
 
         public FileStreamArray (string fileName)
         {
-            fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite);
-            writer = new BinaryWriter(fs);
-            reader = new BinaryReader(fs);
-            Count = 0;
+            fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite); Helpers.operationsCounter++;
+            writer = new BinaryWriter(fs); Helpers.operationsCounter++;
+            reader = new BinaryReader(fs); Helpers.operationsCounter++;
+            Count = 0; Helpers.operationsCounter++;
         }
 
         public int ReadInt(int index)
         {
-            reader.BaseStream.Seek(index * 4, SeekOrigin.Begin);
-            return reader.ReadInt32();
+            reader.BaseStream.Seek(index * 4, SeekOrigin.Begin); Helpers.operationsCounter++;
+            return reader.ReadInt32(); Helpers.operationsCounter++;
         }
         
         public void writeIntAtEnd(int value)
         {
-            writer.BaseStream.Seek(Count * 4, SeekOrigin.Begin);
-            writer.Write(value);
-            Count++;
+            writer.BaseStream.Seek(Count * 4, SeekOrigin.Begin); Helpers.operationsCounter++;
+            writer.Write(value); Helpers.operationsCounter++;
+            Count++; Helpers.operationsCounter++;
         }
 
         public void Close()
@@ -42,15 +42,15 @@ namespace Bucket_D
 
         public void WriteInt(int index, int value)
         {
-            writer.BaseStream.Seek(index * 4, SeekOrigin.Begin);
-            writer.Write(value);
+            writer.BaseStream.Seek(index * 4, SeekOrigin.Begin); Helpers.operationsCounter++;
+            writer.Write(value); Helpers.operationsCounter++;
         }
 
         public void ArrayToFile(int[] array)
         {
             for(int i = 0; i<array.Length;i++)
             {
-                WriteInt(i, array[i]);
+                WriteInt(i, array[i]); Helpers.operationsCounter++;
             }
         }
     }
