@@ -65,7 +65,6 @@ namespace Bucket_Op
             Console.WriteLine("Finding max, min values");
             while(current != null)
             {
-                Helpers.operationsCounter++;
                 if (current.Value > maxValue)
                 {
                     maxValue = current.Value; Helpers.operationsCounter++;
@@ -84,7 +83,6 @@ namespace Bucket_Op
             {
                 buckets.Add(new LinkedList<int>()); Helpers.operationsCounter++;
             }
-            Console.WriteLine("Buckets initiated");
 
             Console.WriteLine("inserting values");
             current = bs.Head; Helpers.operationsCounter++;
@@ -97,10 +95,8 @@ namespace Bucket_Op
 
             Console.WriteLine("Finishing the sort");
             bs.DeleteLinkedList(); Helpers.operationsCounter++;
-            int k = 0;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
-                Helpers.operationsCounter++;
                 if (buckets[i].Count > 0)
                 {
                     current = buckets[i].Head; Helpers.operationsCounter++;

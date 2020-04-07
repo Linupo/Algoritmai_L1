@@ -35,7 +35,6 @@ namespace Bucket_D
         /// <param name="filename"></param>
         public void WriteToFile(string filename, string filePrefix)
         {
-
             int j = 54;
             int curr = 0;
             while (curr != -1)
@@ -87,13 +86,13 @@ namespace Bucket_D
             curr = 0; Helpers.operationsCounter++;
             while (curr != -1)
             {
-                buckets[bs.getNodeValue(curr) - minValue].addNode(bs.getNodeValue(curr)); Helpers.operationsCounter++;
+                int currentValue = bs.getNodeValue(curr);
+                buckets[currentValue - minValue].addNode(currentValue); Helpers.operationsCounter++;
                 curr = bs.getNodeNext(curr); Helpers.operationsCounter++;
             }
-
+            List<int> a = new List<int>();
             Console.WriteLine("Finishing the sort");
             bs.DeleteLinkedList(); Helpers.operationsCounter++;
-            int k = 0; Helpers.operationsCounter++;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
                 if (buckets[i].Count > 0)
@@ -101,7 +100,9 @@ namespace Bucket_D
                     curr = 0; Helpers.operationsCounter++;
                     while (curr != -1)
                     {
-                        bs.addNode(buckets[i].getNodeValue(curr)); Helpers.operationsCounter++;
+                        int b = buckets[i].getNodeValue(curr);
+                        a.Add(b);
+                        bs.addNode(b); Helpers.operationsCounter++;
                         curr = buckets[i].getNodeNext(curr); Helpers.operationsCounter++;
                     }
                 }
