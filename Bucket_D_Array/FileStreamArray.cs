@@ -10,27 +10,18 @@ namespace Bucket_D
         public FileStream fs;
         public BinaryWriter writer;
         public BinaryReader reader;
-        public int Count;
 
         public FileStreamArray (string fileName)
         {
             fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite); Helpers.operationsCounter++;
             writer = new BinaryWriter(fs); Helpers.operationsCounter++;
             reader = new BinaryReader(fs); Helpers.operationsCounter++;
-            Count = 0; Helpers.operationsCounter++;
         }
 
         public int ReadInt(int index)
         {
             reader.BaseStream.Seek(index * 4, SeekOrigin.Begin); Helpers.operationsCounter++;
-            return reader.ReadInt32(); Helpers.operationsCounter++;
-        }
-        
-        public void writeIntAtEnd(int value)
-        {
-            writer.BaseStream.Seek(Count * 4, SeekOrigin.Begin); Helpers.operationsCounter++;
-            writer.Write(value); Helpers.operationsCounter++;
-            Count++; Helpers.operationsCounter++;
+            return reader.ReadInt32();
         }
 
         public void Close()

@@ -24,8 +24,6 @@ namespace Bucket_D
             MyDataArray rndData = new MyDataArray("randomImage.bmp");
             rndData.BucketSort();
             rndData.WriteToFile("randomImage.bmp", "sorted");
-
-            Helpers.DeleteBuckets();
             
             Console.WriteLine("The application has ended succesfully.");
             Console.Read();

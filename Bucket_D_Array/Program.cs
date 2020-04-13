@@ -25,8 +25,6 @@ namespace Bucket_D
             rndData.BucketSort();
             rndData.WriteToFile("randomImage.bmp", "sorted");
 
-            Helpers.DeleteBuckets();
-
             Console.WriteLine("The application has ended succesfully.");
             Console.Read();
         }

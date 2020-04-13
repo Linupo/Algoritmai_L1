@@ -74,12 +74,11 @@ namespace Bucket_D
                 }
                 curr = bs.getNodeNext(curr); Helpers.operationsCounter++;
             }
-
-            List<LinkedList> buckets = new List<LinkedList>(); Helpers.operationsCounter++;
             Console.WriteLine("Initiating buckets");
+            LinkedList bucket = new LinkedList("Bucket");
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
-                buckets.Add(new LinkedList("Buckets/bucket" + i + ".bin")); Helpers.operationsCounter++;
+                bucket.addNode(0);
             }
 
             Console.WriteLine("inserting values");
@@ -87,26 +86,19 @@ namespace Bucket_D
             while (curr != -1)
             {
                 int currentValue = bs.getNodeValue(curr);
-                buckets[currentValue - minValue].addNode(currentValue); Helpers.operationsCounter++;
+                int count = bucket.getNodeValue(currentValue - minValue);
+                count++;
+                bucket.setNodeValue(currentValue - minValue, count); Helpers.operationsCounter++;
                 curr = bs.getNodeNext(curr); Helpers.operationsCounter++;
             }
-            List<int> a = new List<int>();
             Console.WriteLine("Finishing the sort");
             bs.DeleteLinkedList(); Helpers.operationsCounter++;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
-                if (buckets[i].Count > 0)
+                for (int j = 0; j<bucket.getNodeValue(i); j++)
                 {
-                    curr = 0; Helpers.operationsCounter++;
-                    while (curr != -1)
-                    {
-                        int b = buckets[i].getNodeValue(curr);
-                        a.Add(b);
-                        bs.addNode(b); Helpers.operationsCounter++;
-                        curr = buckets[i].getNodeNext(curr); Helpers.operationsCounter++;
-                    }
+                    bs.addNode(i); Helpers.operationsCounter++;
                 }
-                buckets[i].Close();
             }
             Console.WriteLine("Sorting ended, operations done: " + Helpers.operationsCounter);
         }

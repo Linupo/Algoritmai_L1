@@ -49,11 +49,6 @@ namespace Bucket_D
             }
         }
 
-        public static void DeleteBuckets()
-        {
-            foreach (string path in Directory.GetFiles("Buckets"))
-                File.Delete(path);
-        }
 
         /// <summary>
         /// Generates random image of given dimensions
