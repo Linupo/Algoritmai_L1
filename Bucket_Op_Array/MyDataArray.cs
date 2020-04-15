@@ -56,7 +56,7 @@ namespace Bucket_Op
 
         public void BucketSort()
         {
-            Console.WriteLine("Started sorting");
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             int minValue = bs[0]; Helpers.operationCounter++;
             int maxValue = bs[0]; Helpers.operationCounter++;
 
@@ -99,7 +99,8 @@ namespace Bucket_Op
                     }
                 }
             }
-            Console.WriteLine("Done sorting, total operations done: " + Helpers.operationCounter);
+            Console.WriteLine("Time elapsed: " + watch.ElapsedMilliseconds);
+            Console.WriteLine("Operations performed: " + Helpers.operationCounter);
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Bucket_D
                 j += 2;
                 curr = bs.getNodeNext(curr);
             }
-
+            bs.Close();
             using (FileStream file = new FileStream(filePrefix + filename, FileMode.Create, FileAccess.Write))
             {
                 file.Seek(0, SeekOrigin.Begin);
@@ -56,12 +56,11 @@ namespace Bucket_D
 
         public void BucketSort()
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             Helpers.operationsCounter = 0;
-            Console.WriteLine("Started sorting");
             int minValue = bs.getNodeValue(0); Helpers.operationsCounter++;
             int maxValue = bs.getNodeValue(0); Helpers.operationsCounter++;
             int curr = 0; Helpers.operationsCounter++;
-            Console.WriteLine("Finding max, min values");
             while (curr != -1)
             {
                 if (bs.getNodeValue(curr) > maxValue)
@@ -74,14 +73,12 @@ namespace Bucket_D
                 }
                 curr = bs.getNodeNext(curr); Helpers.operationsCounter++;
             }
-            Console.WriteLine("Initiating buckets");
             LinkedList bucket = new LinkedList("Bucket");
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
                 bucket.addNode(0);
             }
 
-            Console.WriteLine("inserting values");
             curr = 0; Helpers.operationsCounter++;
             while (curr != -1)
             {
@@ -91,7 +88,6 @@ namespace Bucket_D
                 bucket.setNodeValue(currentValue - minValue, count); Helpers.operationsCounter++;
                 curr = bs.getNodeNext(curr); Helpers.operationsCounter++;
             }
-            Console.WriteLine("Finishing the sort");
             bs.DeleteLinkedList(); Helpers.operationsCounter++;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
@@ -100,7 +96,9 @@ namespace Bucket_D
                     bs.addNode(i); Helpers.operationsCounter++;
                 }
             }
-            Console.WriteLine("Sorting ended, operations done: " + Helpers.operationsCounter);
+            bucket.Close();
+            Console.WriteLine("Time elapsed: " + watch.ElapsedMilliseconds);
+            Console.WriteLine("Operations performed: " + Helpers.operationsCounter);
         }
 
         /// <summary>

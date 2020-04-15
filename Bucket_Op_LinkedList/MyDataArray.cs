@@ -58,11 +58,10 @@ namespace Bucket_Op
         public void BucketSort()
         {
             Helpers.operationsCounter = 0;
-            Console.WriteLine("Started sorting");
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             int minValue = bs.Head.Value; Helpers.operationsCounter++;
             int maxValue = bs.Head.Value; Helpers.operationsCounter++;
             LinkedList<int>.Node<int> current = bs.Head; Helpers.operationsCounter++;
-            Console.WriteLine("Finding max, min values");
             while(current != null)
             {
                 if (current.Value > maxValue)
@@ -75,25 +74,20 @@ namespace Bucket_Op
                 }
                 current = current.NextNode; Helpers.operationsCounter++;
             }
-            Console.WriteLine("Max, min values found");
 
             List<LinkedList<int>> buckets = new List<LinkedList<int>>(); Helpers.operationsCounter++;
-            Console.WriteLine("Initiating buckets");
             for (int i = 0; i< maxValue - minValue + 1; i++)
             {
                 buckets.Add(new LinkedList<int>()); Helpers.operationsCounter++;
             }
 
-            Console.WriteLine("inserting values");
             current = bs.Head; Helpers.operationsCounter++;
             while (current != null)
             {
                 buckets[current.Value - minValue].Insert(current.Value); Helpers.operationsCounter++;
                 current = current.NextNode; Helpers.operationsCounter++;
             }
-            Console.WriteLine("Values inserted");
 
-            Console.WriteLine("Finishing the sort");
             bs.DeleteLinkedList(); Helpers.operationsCounter++;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
@@ -107,7 +101,8 @@ namespace Bucket_Op
                     }
                 }
             }
-            Console.WriteLine("Sorting ended, total oparations done:" + Helpers.operationsCounter);
+            Console.WriteLine("Time elapsed: " + watch.ElapsedMilliseconds);
+            Console.WriteLine("Operations performed: " + Helpers.operationsCounter);
         }
 
         /// <summary>

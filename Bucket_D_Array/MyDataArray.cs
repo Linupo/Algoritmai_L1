@@ -27,7 +27,6 @@ namespace Bucket_D
             }
 
             original = new FileStreamArray("original.bin");
-            Console.WriteLine("Writing bs array to file");
             original.ArrayToFile(bs);
         }
 
@@ -38,7 +37,6 @@ namespace Bucket_D
         /// <param name="filename"></param>
         public void WriteToFile(string filename, string filePrefix)
         {
-            Console.WriteLine("Writing to file");
             int j = 54;
             for (int i = 0; i < width * height; i++)
             {
@@ -47,7 +45,7 @@ namespace Bucket_D
                 b[j + 1] = p[1];
                 j += 2;
             }
-
+            original.Close();
             using (FileStream file = new FileStream(filePrefix + filename, FileMode.Create, FileAccess.Write))
             {
                 file.Seek(0, SeekOrigin.Begin);
@@ -58,8 +56,8 @@ namespace Bucket_D
 
         public void BucketSort()
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             Helpers.operationsCounter = 0;
-            Console.WriteLine("Started sorting");
             int minValue = original.ReadInt(0); Helpers.operationsCounter++;
             int maxValue = original.ReadInt(0); Helpers.operationsCounter++;
 
@@ -76,14 +74,10 @@ namespace Bucket_D
             }
 
             FileStreamArray bucket = new FileStreamArray("Bucket"); Helpers.operationsCounter++;
-            //buckets.Length = maxValue - minValue + 1
-
-            Console.WriteLine("initializing empty buckets");
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
                 bucket.WriteInt(i, 0); Helpers.operationsCounter++;
             }
-            Console.WriteLine("Filling buckets");
             for (int i = 0; i < width * height; i++)
             {
                 int origValue = original.ReadInt(i); Helpers.operationsCounter++;
@@ -91,7 +85,6 @@ namespace Bucket_D
                 count++;
                 bucket.WriteInt(origValue - minValue, count); Helpers.operationsCounter++;
             }
-            Console.WriteLine("Finishing the sort");
             int k = 0; Helpers.operationsCounter++;
             for (int i = 0; i < maxValue - minValue + 1; i++)
             {
@@ -102,7 +95,8 @@ namespace Bucket_D
                 }
             }
             bucket.Close(); Helpers.operationsCounter++;
-            Console.WriteLine("Sort finished, operatios done: " + Helpers.operationsCounter);
+            Console.WriteLine("Time elapsed: " + watch.ElapsedMilliseconds);
+            Console.WriteLine("Operations performed: " + Helpers.operationsCounter);
         }
 
         /// <summary>
